@@ -19,8 +19,8 @@ $(document).ready(function () {
 
         alert("note saved");
     });
-    //call the key
-    //create loop
+      
+    //get local storage
     $("#8 .col-md-10").val(localStorage.getItem("8"));
     $("#9 .col-md-10").val(localStorage.getItem("9"));
     $("#10 .col-md-10").val(localStorage.getItem("10"));
@@ -33,23 +33,29 @@ $(document).ready(function () {
     $("#17 .col-md-10").val(localStorage.getItem("17"));
 
 
-    //Tense
-    var hour = NowMoment.format("h");
-    console.log(hour);
+    //set time 
+    var hour = NowMoment.format("H");
+    console.log(hour); //24hr
     var amPM = NowMoment.format("A"); //AM or PM
 
     for (var i = 8; i < 18; i++) {
-        var daily = moment().startOf('day').add({ hours: [i] }).format('h');
-        console.log(daily);
-    }
-    //  console.log(dailyJ);
+    var daily = moment().startOf('day').add({ hours: [i] }).format('H');
+console.log(daily);
 
-    for (var j = 0; j < 9; j++) {
-        $("#time").text(daily[j]); // M
-        //  $("#time").text(daily); // 5pm
+//$("#time8").text(daily); // 5pm
+   // $("#time8").text(daily);
+    // for (var i = 8; i < 18; i++) {
+               
+    // }
+    // //  console.log(dailyJ);
 
-    }
+    //for (var j = 0; j < 9; j++) {
+       // $("#time").text(daily[j]); // M
+     
 
+     }
+
+// updates the past, present, future
     function timeUpdate() {
         var hour = NowMoment.format("H");
         var thisHour = parseInt($(this).parent().attr("id"));
@@ -71,6 +77,7 @@ $(document).ready(function () {
         })
     }
 
+    //updates time every sec
     setInterval(() => {
         timeUpdate()
     }, 1000);
