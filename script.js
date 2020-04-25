@@ -20,6 +20,7 @@ $(document).ready(function () {
     });
 
     //Retrieve from local storage
+
     $("#8 .col-md-10").val(localStorage.getItem("8"));
     $("#9 .col-md-10").val(localStorage.getItem("9"));
     $("#10 .col-md-10").val(localStorage.getItem("10"));
@@ -61,4 +62,5 @@ $(document).ready(function () {
         timeUpdate()
     }, 1000);
 
+ 
 });
