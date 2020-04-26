@@ -1,5 +1,14 @@
 $(document).ready(function () {
 
+  //Inspirational array
+  var inspo = [`"Don't let yesterday take up too much of today." - Will Rogers`, `"You learn more from failure than from success. Don’t let it stop you." - Unknown`, `"Knowing is not enough; we must apply." – Johann Wolfgang Von Goethe`];
+  
+  for (var i = 0; i < 3; i++) {
+      var pEl = $("<p>").text(inspo[i]);
+    }
+      $("#inspiration").append(pEl);
+ 
+
     //Moment.js
     var NowMoment = moment();
 
@@ -62,5 +71,5 @@ $(document).ready(function () {
         timeUpdate()
     }, 1000);
 
- 
+
 });
